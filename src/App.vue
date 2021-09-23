@@ -1,6 +1,6 @@
 <template>
   <div class="title-wrap">
-    <h1 class="mt-16 lg:mt-52 font text-black text-4xl sm:text-5xl font-light">Crypto Exchange</h1>
+    <h1 class="mt-16 lg:mt-52 font text-black text-4xl sm:text-5xl font-normal">Crypto Exchange</h1>
     <p class="my-3 font text-black text-lg sm:text-xl font-normal">Exchange fast and easy</p>
   </div>
   <TheForm />
@@ -23,7 +23,7 @@ import TheForm from "./components/TheForm.vue";
 
 }
 .font {
-  font-family: Roboto;
+  font-family: Vollkorn;
 }
 
 input:active, :hover, :focus, textarea:focus {

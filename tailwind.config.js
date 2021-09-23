@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    fontFamily: {
+      'sans': ['Roboto'],
+    },
     colors: {
       gray: {
         light: '#F6F7F8',

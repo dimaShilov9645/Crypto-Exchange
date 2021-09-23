@@ -20,7 +20,7 @@
           :key="coin.index"
           @click="isSearch=false; $emit('changeCoin', coin)"
       >
-        <img :src="coin.image" class="flex items-center justify-center w-5 m-1.5 svg-filter" alt="">
+        <img :src="coin.image.replace('/sprite/currencies/', '/coins/')" class="flex items-center justify-center w-5 m-1.5 svg-filter" alt="">
         <h2 class="m-1.5">{{ coin.ticker.toUpperCase() }}</h2>
         <p class="m-1.5 text-blue-light">{{coin.name}}</p>
       </label>
@@ -39,7 +39,7 @@
     >
       <div class="transform translate-x-2">
         <img
-            :src="select.image"
+            :src="select.image.replace('/sprite/currencies/', '/coins/')"
             class="flex items-center justify-center w-5 transform rotate-12 svg-filter" alt="">
       </div>
       <p class="font text-base text-black font-normal">{{ select.ticker.toUpperCase() }}</p>
@@ -47,9 +47,7 @@
         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
       </svg>
     </label>
-
   </div>
-
 </template>
 
 <script>
@@ -75,6 +73,7 @@ export default {
     return {
       isSearch: false,
       searchCoinsValue: '',
+
       filteredCoins: [],
     }
   },
@@ -84,8 +83,9 @@ export default {
         return this.value_data
       },
       set(value) {
-        this.$emit('changeValue', Number(value))
+        this.$emit('changeValue', value)
       }
+
     },
     searchCoins() {
       if(this.searchCoinsValue === '') {
