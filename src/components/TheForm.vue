@@ -29,10 +29,10 @@
     <div class="flex items-end mt-6 input-wrap flex-col lg:flex-row">
       <div class="flex flex-col w-full input-address">
         <p class="font text-base text-black font-normal">Your Ethereum address</p>
-        <input type="text" class="h-12 p-4 border border-gray rounded bg-gray-light font text-base text-black font-normal">
+        <input type="text" class="h-12 p-4 border-0 lg:border lg:border-gray rounded bg-gray-light font text-base text-black font-normal">
       </div>
-      <div class="relative ml-8 mt-4 lg:mt-0 w-full lg:w-72">
-        <button class="rounded w-full h-12 bg-blue font font-bold uppercase text-white hover:bg-blue-dark">Exchange</button>
+      <div class="relative ml-8 mt-4 lg:mt-0 w-full lg:w-72 z-0">
+        <button class="rounded w-full h-12 bg-blue font font-bold uppercase text-white hover:bg-blue-dark z-0">Exchange</button>
         <div class="error absolute top-13 w-full text-center" v-if="message">
           <p class="text-red">{{ message }}</p>
         </div>

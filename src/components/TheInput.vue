@@ -3,17 +3,17 @@
     <input
         type="text"
         placeholder="Search"
-        class="h-12 p-4 flex-grow border border-r-0 border-gray rounded rounded-tr-none rounded-br-none bg-gray-light font text-base text-black font-normal"
+        class="h-12 p-4 flex-grow focus:outline-none border-0 lg:border lg:border-gray lg:border-r-0 rounded rounded-tr-none rounded-br-none bg-gray-light font text-base text-black font-normal"
         v-model="searchCoinsValue"
     >
-    <div class="flex items-center w-36 justify-end border border-l-0 border-gray rounded rounded-tl-none bg-gray-light rounded-bl-none">
+    <div class="flex items-center w-36 justify-end border-0 lg:border lg:border-gray lg:border-l-0 rounded rounded-tl-none bg-gray-light rounded-bl-none">
       <button @click="isSearch=false">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 m-2 text-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
-    <div class="flex absolute w-full top-12 flex-col border border-t-0 border-gray rounded rounded-tr-none rounded-tl-none overflow-auto h-56">
+    <div class="flex absolute w-full top-12 flex-col border-0 lg:border lg:border-gray lg:border-t-0 rounded rounded-tr-none rounded-tl-none overflow-auto h-56">
       <label
           class="flex font text-base text-black font-normal p-1.5 bg-gray-light hover:bg-white-light cursor-pointer z-20"
           v-for="coin in searchCoins"
@@ -29,12 +29,12 @@
 
   <div class="input-text flex flex-grow relative" v-else >
     <input
-        class="h-12 p-4 flex-grow border border-r-0 border-gray rounded rounded-tr-none rounded-br-none bg-gray-light font text-base text-black font-normal"
+        class="h-12 p-4 flex-grow border-0 lg:border lg:border-gray lg:border-r-0 focus:outline-none rounded rounded-tr-none rounded-br-none bg-gray-light font text-base text-black font-normal"
         type="text"
         v-model="changeValue"
     >
     <label
-        class="flex w-36 items-center border border-l-0 border-gray rounded rounded-tl-none rounded-bl-none bg-gray-light justify-between label cursor-pointer z-0"
+        class="flex w-36 items-center border-0 lg:border lg:border-gray lg:border-l-0 rounded rounded-tl-none rounded-bl-none bg-gray-light justify-between label cursor-pointer z-0"
         @click="isSearch=true"
     >
       <div class="transform translate-x-2">
@@ -123,5 +123,9 @@ export default {
   height  : 60%;
   border-right: 1px solid #E3EBEF;
 }
+
+
+
+
 
 </style>

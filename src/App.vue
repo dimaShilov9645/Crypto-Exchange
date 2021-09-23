@@ -28,6 +28,7 @@ import TheForm from "./components/TheForm.vue";
 
 input:active, :hover, :focus, textarea:focus {
   outline: 0;
+  outline: none;
   outline-offset: 0;
 }
 
