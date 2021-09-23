@@ -10,7 +10,7 @@
       />
       <button
           type='button'
-          class="flex p-1 my-3 items-center justify-end w-full flex-grow lg:justify-center lg:w-20 lg:m-0 lg:flex-grow-0"
+          class="flex p-1 my-3 items-center justify-end w-full flex-grow lg:justify-center lg:w-20 lg:m-0 lg:flex-grow-0 z-0"
           @click="exchangeCoin"
       >
         <svg class="w-6 h-6 lg:transform-none transform rotate-90 text-blue hover:text-blue-dark" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

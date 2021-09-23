@@ -13,9 +13,9 @@
         </svg>
       </button>
     </div>
-    <div class="flex absolute w-full top-12 flex-col border border-t-0 border-gray rounded rounded-tr-none rounded-tl-none overscroll-behavior: auto overflow-auto h-56">
+    <div class="flex absolute w-full top-12 flex-col border border-t-0 border-gray rounded rounded-tr-none rounded-tl-none overflow-auto h-56">
       <label
-          class="flex font text-base text-black font-normal p-1.5 bg-gray-light hover:bg-white-light cursor-pointer"
+          class="flex font text-base text-black font-normal p-1.5 bg-gray-light hover:bg-white-light cursor-pointer z-20"
           v-for="coin in searchCoins"
           :key="coin.index"
           @click="isSearch=false; $emit('changeCoin', coin)"
@@ -34,16 +34,17 @@
         v-model="changeValue"
     >
     <label
-        class="flex w-36 items-center border border-l-0 border-gray rounded rounded-tl-none rounded-bl-none bg-gray-light justify-between label cursor-pointer"
+        class="flex w-36 items-center border border-l-0 border-gray rounded rounded-tl-none rounded-bl-none bg-gray-light justify-between label cursor-pointer z-0"
         @click="isSearch=true"
     >
       <div class="transform translate-x-2">
         <img
             :src="select.image.replace('/sprite/currencies/', '/coins/')"
-            class="flex items-center justify-center w-5 transform rotate-12 svg-filter" alt="">
+            class="flex items-center justify-center w-5 mr-4 lg:mr-0 transform rotate-12 svg-filter" alt=""
+        >
       </div>
       <p class="font text-base text-black font-normal">{{ select.ticker.toUpperCase() }}</p>
-      <svg class="w-5 m-1 text-blue-light" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg class="w-5 m-1 text-blue-light z-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
       </svg>
     </label>
