@@ -97,11 +97,16 @@ export default {
             })
     },
     exchangeAmount: function (leftCoinTicker, rightCoinTicker, value) {
-      axios
-          .get('https://api.changenow.io/v1/exchange-amount/'+value+'/'+leftCoinTicker+'_'+rightCoinTicker+'?api_key=c9155859d90d239f909d2906233816b26cd8cf5ede44702d422667672b58b0cd')
-          .then(response => {
-            this.amount =  response.data.estimatedAmount;
-          })
+      if( value >= this.minValue ) {
+        axios
+            .get('https://api.changenow.io/v1/exchange-amount/'+value+'/'+leftCoinTicker+'_'+rightCoinTicker+'?api_key=c9155859d90d239f909d2906233816b26cd8cf5ede44702d422667672b58b0cd')
+            .then(response => {
+              this.amount =  response.data.estimatedAmount;
+            })
+      } else {
+        this.message = `Minimal exchange ${leftCoinTicker.toUpperCase()} ${this.minValue}`;
+        this.amount = '-';
+      }
     },
     exchangeCoin: function () {
       let current = this.selectedLeftCoin;
